@@ -1,4 +1,4 @@
-import { initAngular } from './angular-app.js';
+import { initAngular } from './angular.js';
 import { createstore } from './redux.js';
 
 const store = createstore();
@@ -22,7 +22,7 @@ function setEl(className, value) {
 }
 
 setTimeout(() => {
-    initReact(store);
+    window.initReact(store);
     initAngular(store);
 
     angular.element(document.getElementById("angular-app")).ready(() => {
