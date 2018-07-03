@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>Angular Redux</title>
+</head>
+
+<body>    
+    <div class="app">
+        <div id="angular-app">
+            <div ng-controller="FormController as $ctrl" ng-cloak>
+                <form ng-model="$ctrl.formModel">
+                    <div class="section">
+                        <h3>Angular</h3>
+                        <div>
+                            <label>Name</label>
+                            <input
+                                ng-model="$ctrl.form.name"
+                                ng-change="$ctrl.formChanged()"
+                            />
+                        </div>
+                        <div>
+                            <label>Date</label>
+                            <input
+                                ng-model="$ctrl.form.date"
+                                ng-change="$ctrl.formChanged()"
+                            />
+                        </div>
+                        <div>
+                            <label>Guests</label>
+                            <input
+                                ng-model="$ctrl.form.guests"
+                                ng-change="$ctrl.formChanged()"
+                            />
+                        </div>
+                        <div>
+                            <label>Location</label>
+                            <span ng-bind="$ctrl.form.location"></span>
+                        </div>
+                        <div>
+                            <label>Status</label>
+                            <span ng-bind="$ctrl.form.status"></span>
+                        </div>
+                        <div>
+                            <label>Segment</label>
+                            <span ng-bind="$ctrl.form.segment"></span>
+                        </div>
+                    </div>
+                    <div class="section">
+                        <h3>ngReact</h3>
+                        <react-component name="ReactForm"></react-component>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>Redux</h3>
+            <div>
+                Name:
+                <span class="name-display"></span>
+            </div>
+            <div>
+                Date:
+                <span class="date-display"></span>
+            </div>
+            <div>
+                Guests:
+                <span class="guests-display"></span>
+            </div>
+            <div>
+                Location:
+                <span class="location-display"></span>
+            </div>
+            <div>
+                Status:
+                <span class="status-display"></span>
+            </div>
+            <div>
+                Segment:
+                <span class="segment-display"></span>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>window.exports = {};</script>
+
+<script src="https://unpkg.com/lodash@4.17.10/lodash.js"></script>
+<script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/angular@1.5.0/angular.min.js"></script>
+<script src="https://unpkg.com/redux@4.0.0/dist/redux.js"></script>
+<script src="https://unpkg.com/react-redux@5.0.6/dist/react-redux.min.js"></script>
+<script src="https://unpkg.com/ngreact@0.5.1/ngReact.js"></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+<script type="text/babel" src="ng-react.js" data-presets="react,es2015"></script>
+<script type="module" src="angular-app.js"></script>
+<script type="module" src="redux.js"></script>
+<script type="module" src="index.js"></script>
+</html>

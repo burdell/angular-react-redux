@@ -1,0 +1,28 @@
+* {
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+.app {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.section {
+    margin: 2em 0;
+    line-height: 2;
+    border: 1px solid #d3d3d3;
+    padding: 1em;
+}
+
+input {
+  height: 40px;
+  width: 100%;
+  font-size: 1.5em;  
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
